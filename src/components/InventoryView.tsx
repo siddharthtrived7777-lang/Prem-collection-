@@ -212,7 +212,27 @@ export const InventoryView: React.FC<InventoryViewProps> = ({
 
       {/* Inventory Table Card */}
       <div className="bg-white rounded-2xl border border-stone-200 shadow-xs overflow-hidden">
-        {filteredProducts.length === 0 ? (
+        {products.length === 0 ? (
+          <div className="p-12 text-center text-stone-500">
+            <div className="w-14 h-14 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mx-auto mb-3">
+              <Package className="w-7 h-7" />
+            </div>
+            <h4 className="text-base font-bold text-stone-800">
+              Your inventory is fresh & empty
+            </h4>
+            <p className="text-xs text-stone-500 mt-1 max-w-md mx-auto">
+              Start adding your garment products, categories, sizes, colors, prices, and stock quantities to begin billing.
+            </p>
+            <button
+              id="inventory-add-first-btn"
+              onClick={onOpenAddModal}
+              className="mt-4 inline-flex items-center gap-2 px-4 py-2.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs font-bold shadow-sm transition-all hover:scale-[1.02]"
+            >
+              <PlusCircle className="w-4 h-4" />
+              <span>Add Your First Product</span>
+            </button>
+          </div>
+        ) : filteredProducts.length === 0 ? (
           <div className="p-12 text-center text-stone-500">
             <Package className="w-10 h-10 text-stone-300 mx-auto mb-2" />
             <h4 className="text-sm font-semibold text-stone-800">

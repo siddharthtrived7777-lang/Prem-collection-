@@ -370,7 +370,23 @@ export const BillingView: React.FC<BillingViewProps> = ({
 
             {/* Fast Product Suggestions Grid / List */}
             <div className="mt-3 max-h-[220px] overflow-y-auto divide-y divide-stone-100 border border-stone-100 rounded-xl">
-              {filteredProducts.length === 0 ? (
+              {products.length === 0 ? (
+                <div className="p-6 text-center text-xs text-stone-500">
+                  <ShoppingBag className="w-6 h-6 text-stone-300 mx-auto mb-1.5" />
+                  <p className="font-semibold text-stone-700">No products in inventory yet</p>
+                  <p className="text-stone-400 mt-0.5">Please add products under the Inventory tab to start billing.</p>
+                  {onNavigateToInventory && (
+                    <button
+                      type="button"
+                      onClick={onNavigateToInventory}
+                      className="mt-2.5 inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 px-3 py-1.5 rounded-lg border border-amber-200 transition-colors"
+                    >
+                      <span>Go to Inventory & Add Products</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </button>
+                  )}
+                </div>
+              ) : filteredProducts.length === 0 ? (
                 <div className="p-4 text-center text-xs text-stone-500">
                   No matching products found. Try a different keyword or category.
                 </div>

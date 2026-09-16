@@ -226,7 +226,27 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           <div className="divide-y divide-stone-100 max-h-[360px] overflow-y-auto">
-            {lowStockProducts.length === 0 ? (
+            {products.length === 0 ? (
+              <div className="p-8 text-center text-stone-500">
+                <div className="w-12 h-12 rounded-full bg-stone-100 text-stone-400 flex items-center justify-center mx-auto mb-2">
+                  <Package className="w-6 h-6" />
+                </div>
+                <p className="text-sm font-semibold text-stone-800">
+                  No products in inventory yet
+                </p>
+                <p className="text-xs text-stone-400 mt-0.5 max-w-xs mx-auto">
+                  Add items to your inventory to track stock levels and receive low-stock alerts.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => onNavigate('inventory')}
+                  className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-lg text-xs font-semibold"
+                >
+                  <Plus className="w-3.5 h-3.5" />
+                  <span>Add First Product</span>
+                </button>
+              </div>
+            ) : lowStockProducts.length === 0 ? (
               <div className="p-8 text-center text-stone-500">
                 <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-2">
                   <Package className="w-6 h-6" />
