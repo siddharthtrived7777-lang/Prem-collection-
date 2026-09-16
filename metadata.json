@@ -1,0 +1,6 @@
+{
+  "name": "Prem Collection",
+  "description": "Internal shop-counter billing, inventory management, and WhatsApp receipt generator for Prem Collection clothing store.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
